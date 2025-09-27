@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gerador de Senhas Seguras</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+
+<body>
+  <header class="header">
+    <img src="images/logo2.png" alt="Logo" class="logo" />
+  </header>
+
+  <main class="container">
+    <section class="form-card">
+      <form id="passwordForm">
+        <fieldset>
+          <legend>Configurações da senha</legend>
+
+          <!-- Campo numérico apenas (removido slider) -->
+          <label for="lengthNumber">Tamanho (6–126):</label>
+
+          <div class="length-control">
+            <input type="number" id="lengthNumber" class="length-number" min="6" max="126" value="16" step="1"
+              aria-label="Quantidade de caracteres" title="Digite a quantidade de caracteres (6–126)" />
+            <!-- área de warning inline -->
+            <div id="lengthWarning" class="warning hidden" role="alert" aria-live="assertive"></div>
+          </div>
+
+          <div class="checkboxes">
+            <label><input type="checkbox" id="includeUpper" checked /> Letras maiúsculas (A–Z)</label>
+            <label><input type="checkbox" id="includeLower" checked /> Letras minúsculas (a–z)</label>
+            <label><input type="checkbox" id="includeNumbers" checked /> Números (0–9)</label>
+            <label><input type="checkbox" id="includeSymbols" checked /> Símbolos (!@#$...)</label>
+            <label><input type="checkbox" id="avoidAmbiguous" /> Evitar caracteres ambíguos (O,0,I,l)</label>
+          </div>
+
+          <div class="actions">
+            <button type="submit" id="generateBtn">Gerar senha</button>
+            <button type="button" id="generateMultipleBtn">Gerar 5</button>
+            <button type="button" id="clearHistory">Limpar Histórico</button>
+          </div>
+
+        </fieldset>
+      </form>
+    </section>
+
+    <section class="result-card">
+      <div class="result-header">
+        <img src="images/lock-icon.png" alt="Ícone de cadeado" class="lock-icon" />
+        <h2>Resultados</h2>
+      </div>
+
+      <div id="results" class="results-list" aria-live="polite"></div>
+
+      <div class="strength">
+        <label>Força: <span id="strengthLabel">-</span></label>
+        <progress id="strengthMeter" value="0" max="100"></progress>
+      </div>
+
+      <div class="history">
+        <h3>Histórico</h3>
+        <ul id="historyList"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Feito por Alisson e Alan</p>
+    <img src="images/bg-decor.png" alt="Decoração" class="bg-decor" />
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
