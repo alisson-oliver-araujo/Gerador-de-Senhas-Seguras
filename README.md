@@ -5,13 +5,7 @@ Aplicativo web simples para gerar senhas seguras com validação, histórico e c
 ## Como executar
 
 1. Baixe/copiei os arquivos para uma pasta local (mantenha a estrutura `js/` e `images/`).
-2. Abra `index.html` em um navegador moderno (Chrome, Edge, Firefox). Alguns navegadores podem bloquear módulos ESM via `file://` — se tiver problema rode um servidor local simples:
-
-```bash
-# Python 3
-python -m http.server 8000
-# depois abra http://localhost:8000
-```
+2. Abra `index.html` em um navegador moderno (Chrome, Edge, Firefox).
 
 ## O que o projeto faz
 
